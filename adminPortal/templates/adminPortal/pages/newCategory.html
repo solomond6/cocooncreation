@@ -1,0 +1,30 @@
+{% extends 'adminPortal/base.html' %} {% block title %} Index {% endblock %}{% block body %}
+    <div class="row layout-top-spacing">
+        <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+            <h2>{{title}}</h2>
+            <div class="widget-content widget-content-area br-6">
+                {% if messages %}
+                    {% for message in messages %}
+                        <alert {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>
+                            {{ message }}
+                        </alert>
+                    {% endfor %}
+                {% endif %}
+                <div class="row">
+                    <div class="col-12 col-sm-6 mt-sm-0 mt-5 pl-4 pt-3 pb-3 float-left">
+                        <form class="text-left" action="{% url 'adminPortal:submitNewCategory' %}" method="post">
+                                {% csrf_token %}
+                            <div class="form-group">
+                                <label for="fullName">Category Name:</label>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="" value="" required>
+                            </div>
+                            <button class="btn btn-primary submit-fn mt-2" type="submit">Submit</button>
+                            <button class="btn btn-warning submit-fn mt-2" type="Reset">Reset</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+	        

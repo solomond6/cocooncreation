@@ -1,0 +1,8 @@
+Django>=3.0,<4.0
+psycopg2-binary>=2.
+django-datatables-view
+requests
+mysqlclient
+djangorestframework
+psycopg2
+django-cors-headers

@@ -1,0 +1,45 @@
+{% extends 'adminPortal/base.html' %} {% block title %} Index {% endblock %}{% block body %}
+    <div class="row layout-top-spacing">
+    
+        <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+            <h2>{{title}}</h2>
+            <div class="widget-content widget-content-area br-6">
+                {% if messages %}
+                    {% for message in messages %}
+                        <alert {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>
+                            {{ message }}
+                        </alert>
+                    {% endfor %}
+                {% endif %}
+                <div class="table-responsive mb-4 mt-4">
+                    <table id="zero-config" class="table table-hover table-striped" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Summary</th>
+                                <th>Date</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for a in latest_post_list %}
+                                <tr>
+                                    <td>{{ a.id }}</td>
+                                    <td>{{ a.title }}</td>
+                                    <td>{{ a.summary }}</td>
+                                    <td>{{ a.published_date }}</td>
+                                    <td><a href="{% url 'adminPortal:editarticle' id=a.id %}" class="btn btn-info btn-sm">Edit</a></td>
+                                </tr>
+                            {% empty %}
+                                <tr><td colspan="7">No Records Found.</td></tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+	        
