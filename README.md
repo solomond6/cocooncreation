@@ -4,7 +4,7 @@ Cocoon Creation backend created with django and mysql
 
 * Clone this project
     ```bash
-    git clone git@github.com:MooveAfrica/moove-unified-api.git
+    git clone https://github.com/solomond6/cocooncreation.git
     ```
 
 * Install Mysql database
