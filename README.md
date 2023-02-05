@@ -35,11 +35,14 @@ Cocoon Creation backend created with django and mysql
     ```
 
 * Admin Login
+    ```bash
     Username: admin@example.com
     Password: 1234567890
+    ```
 
 * Api Routes
+    ```bash
     /api/categories
     /api/authors
     /api/articles
-    
+    ```
